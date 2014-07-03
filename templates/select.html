@@ -1,0 +1,17 @@
+<ion-view title="选择">
+  <ion-content>  
+	  <ul class="list">
+		  <li class="item item-checkbox" ng-repeat="data in datas" style="text-align: center; padding-left: 0">
+		     {{data.name}}
+		     <label class="checkbox" style="left: 80%">
+		       <input type="checkbox" ng-model="data.mark">
+		     </label>
+		  </li>
+	  </ul>
+	  
+	  <button class="button button-full button-positive" ng-click="openModal()">
+	  	提交
+	  </button>
+
+  </ion-content>
+</ion-view>

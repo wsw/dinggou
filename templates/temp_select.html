@@ -1,0 +1,28 @@
+<div class="modal">
+    <ion-header-bar title="选择时间段">
+    	<h1 class="title">选择时间段!</h1>
+    	<div class="buttons">
+	       <a class="button button-clear button-positive icon ion-ios7-close-outline" ng-click="closeModal()"></a>
+	    </div>
+    </ion-header-bar>
+    <ion-content>
+        <div class="list">
+		  <label class="item item-radio">
+		    <input type="radio" name="group" ng-click="state(1)" checked="">
+		    <div class="item-content">
+		      	白天
+		    </div>
+		    <i class="radio-icon ion-checkmark"></i>
+		  </label>
+		  
+		  <label class="item item-radio">
+		    <input type="radio" name="group" ng-click="state(2)">
+		    <div class="item-content">
+		      	晚上
+		    </div>
+		    <i class="radio-icon ion-checkmark"></i>
+		  </label>
+		</div>
+		<button class="button button-full button-positive" ng-click="completeModal()">提交</button>
+    </ion-content>
+  </div>

@@ -1,0 +1,21 @@
+<ion-view title="价格">
+  <ion-content>
+    <div class="row" ng-repeat="data in datass">
+	  <div class="col">
+	  	<label class="item-input-wrapper">
+		    <input type="text" value="{{data.name}}" readonly="true">
+		</label>
+	  </div>
+	  <div class="col">
+	  	<label class="item-input-wrapper">
+		    <input type="text" value="{{data.price}}" readonly="true">
+		</label>
+	  </div>
+	  <div class="col">
+	  	<label class="item-input-wrapper">
+		    <input type="text" value="{{data.state}}" readonly="true">
+		</label>
+	  </div>
+	</div>
+  </ion-content>
+</ion-view>

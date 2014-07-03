@@ -1,0 +1,18 @@
+<ion-view title="新增数据">
+  <ion-content>
+	<div class="item item-input-inset">
+	    <label class="item-input-wrapper">
+	      <input type="text" placeholder="name" ng-model="name">
+	    </label>
+	    <button class="button button-small padding-horizontal" ng-click="sub(name)">
+	      	增加
+	    </button>
+	  </div>
+	  <ion-list>
+	   <ion-item type="item-text-wrap" ng-repeat="data in datas">
+	     <h3 class="inline">{{data.name}}</h3>
+	     <i class="icon ion-close" style="float: right" ng-click="del(data.id)"></i>
+	   </ion-item>
+	  </ion-list>
+  </ion-content>
+</ion-view>

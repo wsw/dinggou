@@ -1,0 +1,75 @@
+<ion-view title="输入页">
+	<ion-content>
+		<div class="row" ng-repeat="data in datas">
+		  <div class="col">
+		  	<label class="item-input-wrapper">
+		      <input type="text" value="{{data.name}}" readonly="true">
+		    </label>
+		  </div>
+		  <div class="col">
+		  	<label class="item-input-wrapper">
+		      <input type="number" placeholder="数量" ng-model="data.price" >
+		    </label>
+		  </div>
+		  <div class="col">
+		  	<label class="item-input-wrapper">
+		      <input type="number" placeholder="金额" ng-model="data.quantity">
+		    </label>
+		  </div>
+		  <div class="col">
+		  	<button class="button padding-horizontal button-small button-positive" style="width: 100%" ng-click="cal($index, data.price, data.quantity)">
+			  计算
+			</button>
+		  </div>
+		  <div class="col">
+		  	<label class="item-input-wrapper">
+		      <input type="number" placeholder="总金额" ng-model="data.total">
+		    </label>
+		  </div>
+		</div>
+		<div class="row">
+		  <div class="col">
+		  	<label class="item-input-wrapper">
+		      <input type="number" placeholder="最终金额" ng-model="totals">
+		    </label>
+		  </div>
+		  <div class="col">
+		  	<button class="button button-small button-positive" style="width: 100%" ng-click="tot()">
+			  总计
+			</button>
+		  </div>
+		  <div class="col">
+		  	<button class="button button-small button-positive" style="width: 100%" ng-click="openModal()">
+			  继续添加
+			</button>
+		  </div>
+		  <div class="col">
+		  	<button class="button button-small button-positive" style="width: 100%" ng-click="complete()">
+			  完成
+			</button>
+		  </div>
+		</div>
+	</ion-content>
+</ion-view>
+
+<script id="modal.html" type="text/ng-template">
+  <div class="modal">
+    <ion-header-bar title="继续添加">
+    	<h1 class="title">继续添加!</h1>
+    	<div class="buttons">
+	       <a class="button button-clear button-positive icon ion-ios7-close-outline" ng-click="closeModal()"></a>
+	    </div>
+    </ion-header-bar>
+    <ion-content>
+        <ul class="list">
+		  <li class="item item-checkbox" ng-repeat="data in modalDatas" style="text-align: center; padding-left: 0">
+		     {{data.name}}
+		     <label class="checkbox" style="left: 80%">
+		       <input type="checkbox" ng-model="data.mark">
+		     </label>
+		  </li>
+	    </ul>
+		<button class="button button-full button-positive" ng-click="closeModal()">提交</button>
+    </ion-content>
+  </div>
+</script>
